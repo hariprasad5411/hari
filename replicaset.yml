@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: tree
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: zomata
+  template:
+    metadata:
+      labels:
+        app: zomata
+    spec:
+      containers:
+        - name: cont-1
+          image: hari38316/docker-image:digital-marketing
+          ports:
+            - containerPort: 80
+

@@ -1,0 +1,20 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ad-apps
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: king
+  template:
+    metadata:
+      labels:
+        app: king
+    spec:
+      containers:
+        - name: cont-1
+          image: hari38316/docker-image:tic-tac_game
+          ports:
+            - containerPort: 80
